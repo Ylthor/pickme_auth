@@ -1,3 +1,1 @@
-import AuthForm from "./components/auth/AuthForm";
-
-export default AuthForm
+export * from "./components/auth/AuthForm"
