@@ -23,7 +23,7 @@ function CompanySelector() {
             method: "get",
         },{});
 
-        promise.then((res) => {
+        promise.then((res:any) => {
             const it = res.data.data;
             setItems(it.map((elem:any) => ({
                 value: elem.id,
@@ -47,7 +47,7 @@ function CompanySelector() {
             url: `/v2.1/company/${key}/change-company`,
             method: "patch",
         },{});
-        promise2.then((res) => {
+        promise2.then((res:any) => {
             toast.success(t('companyDataIsUpdated'));
             setCompanyInfo(res.data.data)
         })

@@ -3,7 +3,7 @@ import {useSiteAttributeStore} from "../../providers/site-attribute-store-provid
 import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@heroui/dropdown";
 import {menuItemClassName} from "./ThemeSelector";
 
-const DEFAULT_TZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+export const DEFAULT_TZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 export const TZ_OPTIONS = [
     {"label":"(GMT-12:00) International Date Line West","value":"Etc/GMT+12"},

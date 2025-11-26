@@ -1,3 +1,4 @@
+// @ts-ignore
 import { createStore } from "zustand/vanilla";
 
 export type OtpConfirmState = {
@@ -28,10 +29,11 @@ export const defaultInitState: OtpConfirmState = {
     onFinally: () => {},
 };
 export const createOtpConfirmStore = (initState: OtpConfirmState = defaultInitState) => {
+    //@ts-ignore
     return createStore<OtpConfirmStore>()((set) => ({
         ...initState,
         setClose: () => set(() => ({...defaultInitState})),
-        setOpen: (data) => set(() => ({...data})),
+        setOpen: (data:any) => set(() => ({...data})),
         setUrlDataToReuseOnConfirm: (data: any) => set(() => ({urlDataToReuseOnConfirm: data}))
     }));
 };

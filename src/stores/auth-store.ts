@@ -51,25 +51,26 @@ export const defaultInitState: AuthState = {
     is_anonymous: true,
 };
 export const createAuthStore = (initState: AuthState = defaultInitState) => {
+    //@ts-ignore
     return createStore<AuthStore>()((set) => ({
         ...initState,
         logOut: () => set(() => ({...defaultInitState})),
-        setAuth: (data) =>
+        setAuth: (data:any) =>
             set(() => {
                 return { ...data, is_checking: false };
             }),
-        setPin: (data) => set(() => ({pin: data})),
-        setLoginWindowCallback: (data) =>
+        setPin: (data:any) => set(() => ({pin: data})),
+        setLoginWindowCallback: (data:any) =>
             set(() => ({ loginWindowCallback: data })),
-        showLoginWindowAction: (data) => set(() => ({ showLoginWindow: data })),
-        setUserInfo: (data) =>
-            set((state) => {
+        showLoginWindowAction: (data:any) => set(() => ({ showLoginWindow: data })),
+        setUserInfo: (data:any) =>
+            set(() => {
                 return Object.keys(data).reduce(
                     //@ts-ignore
                     (acc, key) => ({ ...acc, [key]: data[key] }),
                     {},
                 );
             }),
-        setAuthToken: (data) => set(() => ({ ...data, is_checking: false})),
+        setAuthToken: (data:any) => set(() => ({ ...data, is_checking: false})),
     }));
 };

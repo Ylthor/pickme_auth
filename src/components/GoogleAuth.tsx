@@ -41,6 +41,7 @@ function GoogleAuth() {
         },{});
 
         promise.then((res) => {
+            //@ts-ignore
             setAvailableMethods(res.data.data);
         }).finally(() => {
             setIsLoading(false);
@@ -61,9 +62,11 @@ function GoogleAuth() {
         setIsLoading(true)
         promise.then((res) => {
             setWindowOpen(true);
+            //@ts-ignore
             setGoogleQr(res.data.data)
             setQrOptions((prev) => ({
                 ...prev,
+                //@ts-ignore
                 data: res.data.data.qr_code
             }))
         }).finally(() => {
@@ -82,6 +85,7 @@ function GoogleAuth() {
         },{});
 
         promise.then((res) => {
+            //@ts-ignore
             toast.success(res.data.data.message);
             onClose();
             setWindowOpen(false);
@@ -111,6 +115,7 @@ function GoogleAuth() {
             },{});
 
             promise.then((res) => {
+                //@ts-ignore
                 toast.success(res.data.data.message ?? t('googleAuthDisabled'));
                 setWindowOpen(false);
                 setIsVerify(false);
