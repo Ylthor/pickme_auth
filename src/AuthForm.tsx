@@ -1,13 +1,13 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {Formik, FormikProps} from "formik";
 import * as Yup from "yup";
-import DefaultInput from "../form/DefaultInput";
-import SiteButton from "../ui/SiteButton";
+import DefaultInput from "./components/form/DefaultInput";
+import SiteButton from "./components/ui/SiteButton";
 import {useTranslation} from "react-i18next";
 import toast from "react-hot-toast";
-import {useAuthStore} from "../../providers/auth-store-provider";
-import {useOtpConfirmStore} from "../../providers/otp-confirm-store-provider";
-import {Provider} from "../../provider";
+import {useAuthStore} from "./providers/auth-store-provider";
+import {useOtpConfirmStore} from "./providers/otp-confirm-store-provider";
+import {Provider} from "./Provider";
 
 export function AuthForm() {
     const {

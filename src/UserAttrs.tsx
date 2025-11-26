@@ -1,15 +1,15 @@
 import React from 'react';
 import {useTranslation} from "react-i18next";
-import {useAuthStore} from "../../providers/auth-store-provider";
-import {useSiteAttributeStore} from "../../providers/site-attribute-store-provider";
-import EditIcon from "../icons/EditIcon";
-import ThemeSelector from "../ui/ThemeSelector";
-import LanguageSelector from "../ui/LanguageSelector";
-import TimezoneSelector from "../ui/TimezoneSelector";
-import CompanySelector from "../ui/CompanySelector";
-import GoogleAuth from "../GoogleAuth";
-import SiteButton from "../ui/SiteButton";
-import {Provider} from "../../provider";
+import {useAuthStore} from "./providers/auth-store-provider";
+import {useSiteAttributeStore} from "./providers/site-attribute-store-provider";
+import EditIcon from "./components/icons/EditIcon";
+import ThemeSelector from "./components/ui/ThemeSelector";
+import LanguageSelector from "./components/ui/LanguageSelector";
+import TimezoneSelector from "./components/ui/TimezoneSelector";
+import CompanySelector from "./components/ui/CompanySelector";
+import GoogleAuth from "./components/GoogleAuth";
+import SiteButton from "./components/ui/SiteButton";
+import {Provider} from "./Provider";
 
 export function UserAttrs() {
     const { email,name, number_phone,surname, logOut} =

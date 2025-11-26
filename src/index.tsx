@@ -1,2 +1,3 @@
-export * from "./components/auth/AuthForm"
-export * from "./components/auth/UserAttrs"
+export * from "./AuthForm"
+export * from "./UserAttrs"
+export * from './Provider'
