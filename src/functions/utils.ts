@@ -19,7 +19,7 @@ export function getNavigatorLocale() {
     })
 }
 
-export const getCallbackFuncsByKey = (keys:string[],object) => {
+export const getCallbackFuncsByKey = (keys:string[],object:any) => {
     const neededKeys = Object.keys(object).filter((key) => keys.includes(key));
     return neededKeys.reduce((acc,key) => {
         if (object[key] && typeof object[key] === 'function') {
