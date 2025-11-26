@@ -79,7 +79,7 @@ function ConfirmWindow() {
             }
         },{});
 
-        promise.then((res) => {
+        promise.then((res:any) => {
             setAvailableMethods(res.data.data);
         }).finally(() => {
             setIsLoading(false);
