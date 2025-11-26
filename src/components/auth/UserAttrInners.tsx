@@ -9,7 +9,7 @@ import TimezoneSelector from "../ui/TimezoneSelector";
 import CompanySelector from "../ui/CompanySelector";
 import GoogleAuth from "../GoogleAuth";
 import SiteButton from "../ui/SiteButton";
-
+import "../../styles/globals.css"
 function UserAttrInners() {
     const { email,name, number_phone,surname, logOut} =
         useAuthStore((state) => state);

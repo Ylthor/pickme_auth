@@ -8,7 +8,7 @@ import * as Yup from "yup";
 import DefaultInput from "../form/DefaultInput";
 import SiteButton from "../ui/SiteButton";
 import ConfirmWindow from "../ConfirmWindow";
-
+import "../../styles/globals.css"
 function AuthFormInners() {
     const {
         is_anonymous,
