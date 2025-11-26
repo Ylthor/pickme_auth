@@ -11,7 +11,7 @@ import GoogleAuth from "../GoogleAuth";
 import SiteButton from "../ui/SiteButton";
 import {Provider} from "../../provider";
 
-function UserAttrs() {
+export function UserAttrs() {
     const { email,name, number_phone,surname, logOut} =
         useAuthStore((state) => state);
     const {setUserAttrsModalState} = useSiteAttributeStore((store) => store);
@@ -64,5 +64,3 @@ function UserAttrs() {
         </Provider>
     );
 }
-
-export default UserAttrs;

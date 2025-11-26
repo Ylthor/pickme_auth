@@ -9,7 +9,7 @@ import {useAuthStore} from "../../providers/auth-store-provider";
 import {useOtpConfirmStore} from "../../providers/otp-confirm-store-provider";
 import {Provider} from "../../provider";
 
-function AuthForm() {
+export function AuthForm() {
     const {
         is_anonymous,
         email: emailFromStore,
@@ -146,5 +146,3 @@ function AuthForm() {
         </Provider>
     );
 }
-
-export default AuthForm;
