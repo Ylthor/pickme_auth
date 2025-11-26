@@ -9,6 +9,7 @@ import TimezoneSelector from "../ui/TimezoneSelector";
 import CompanySelector from "../ui/CompanySelector";
 import GoogleAuth from "../GoogleAuth";
 import SiteButton from "../ui/SiteButton";
+import {Provider} from "../../provider";
 
 function UserAttrs() {
     const { email,name, number_phone,surname, logOut} =
@@ -28,37 +29,39 @@ function UserAttrs() {
     }
 
     return (
-        <div className={'flex flex-col gap-4'}>
-            <h1>{t('authIsSuccessful')}</h1>
-            <div className={'flex flex-col w-full p-4 gap-4 relative'}>
-                <div className={'absolute top-4 right-4 text-lg cursor-pointer'} onClick={onEditClick}>
-                    <EditIcon/>
+        <Provider>
+            <div className={'flex flex-col gap-4'}>
+                <h1>{t('authIsSuccessful')}</h1>
+                <div className={'flex flex-col w-full p-4 gap-4 relative'}>
+                    <div className={'absolute top-4 right-4 text-lg cursor-pointer'} onClick={onEditClick}>
+                        <EditIcon/>
+                    </div>
+                    <div className={'flex gap-3 text-2xl'}>
+                        <span>{name} {surname}</span>
+                    </div>
+                    <div className={'flex gap-3 text-md'}>
+                        <span>{email}</span>
+                    </div>
+                    {
+                        number_phone ? <div className={'flex gap-3 text-md'}>
+                            <span>+{number_phone}</span>
+                        </div> : null
+                    }
                 </div>
-                <div className={'flex gap-3 text-2xl'}>
-                    <span>{name} {surname}</span>
+                <div className={'my-4 py-4 flex flex-col'}>
+                    <div className={'mb-8 px-4 text-lg'}>{t('settings')}:</div>
+                    <div className={'flex gap-2 flex-col'}>
+                        <ThemeSelector/>
+                        <LanguageSelector/>
+                        <TimezoneSelector/>
+                        <CompanySelector/>
+                    </div>
+                    <GoogleAuth/>
                 </div>
-                <div className={'flex gap-3 text-md'}>
-                    <span>{email}</span>
-                </div>
-                {
-                    number_phone ? <div className={'flex gap-3 text-md'}>
-                        <span>+{number_phone}</span>
-                    </div> : null
-                }
+                <SiteButton id={'logout_btn'} onClick={onClick}
+                            className={'mt-auto'}>{t('logOut')}</SiteButton>
             </div>
-            <div className={'my-4 py-4 flex flex-col'}>
-                <div className={'mb-8 px-4 text-lg'}>{t('settings')}:</div>
-                <div className={'flex gap-2 flex-col'}>
-                    <ThemeSelector/>
-                    <LanguageSelector/>
-                    <TimezoneSelector/>
-                    <CompanySelector/>
-                </div>
-                <GoogleAuth/>
-            </div>
-            <SiteButton id={'logout_btn'} onClick={onClick}
-                        className={'mt-auto'}>{t('logOut')}</SiteButton>
-        </div>
+        </Provider>
     );
 }
 

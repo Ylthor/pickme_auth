@@ -7,6 +7,7 @@ import {useTranslation} from "react-i18next";
 import toast from "react-hot-toast";
 import {useAuthStore} from "../../providers/auth-store-provider";
 import {useOtpConfirmStore} from "../../providers/otp-confirm-store-provider";
+import {Provider} from "../../provider";
 
 function AuthForm() {
     const {
@@ -99,48 +100,50 @@ function AuthForm() {
     })
 
     return (
-        <Formik
-            enableReinitialize={true}
-            initialValues={{email: ''}}
-            innerRef={formikRef}
-            validateOnBlur={false}
-            validateOnChange={false}
-            validationSchema={validationSchema}
-            onSubmit={onSubmit}
-        >
-            {({ values }) => {
-                return (
-                    <>
+        <Provider>
+            <Formik
+                enableReinitialize={true}
+                initialValues={{email: ''}}
+                innerRef={formikRef}
+                validateOnBlur={false}
+                validateOnChange={false}
+                validationSchema={validationSchema}
+                onSubmit={onSubmit}
+            >
+                {({ values }) => {
+                    return (
                         <>
-                            <div className={"w-full gap-1 flex flex-col items-start"}>
-                                <h5>
-                                    {t('enterEmail')}
-                                </h5>
-                                <span className={"text-large mt-[6px]"}>
+                            <>
+                                <div className={"w-full gap-1 flex flex-col items-start"}>
+                                    <h5>
+                                        {t('enterEmail')}
+                                    </h5>
+                                    <span className={"text-large mt-[6px]"}>
                                             {t('loginOrJoin',{name:'Pick Me'})}
                                         </span>
-                            </div>
-                            <DefaultInput
-                                isClearable={false}
-                                type={'email'}
-                                name={"email"}
-                                placeholder={"example@example.com"}
-                                value={values?.email}
-                            />
+                                </div>
+                                <DefaultInput
+                                    isClearable={false}
+                                    type={'email'}
+                                    name={"email"}
+                                    placeholder={"example@example.com"}
+                                    value={values?.email}
+                                />
+                            </>
+                            <SiteButton
+                                id={'login_continue_button'}
+                                variant={'static'}
+                                className={"h-[46px] w-full"}
+                                isLoading={isLoading}
+                                onClick={submitForm}
+                            >
+                                {t('continue')}
+                            </SiteButton>
                         </>
-                        <SiteButton
-                            id={'login_continue_button'}
-                            variant={'static'}
-                            className={"h-[46px] w-full"}
-                            isLoading={isLoading}
-                            onClick={submitForm}
-                        >
-                            {t('continue')}
-                        </SiteButton>
-                    </>
-                );
-            }}
-        </Formik>
+                    );
+                }}
+            </Formik>
+        </Provider>
     );
 }
 
