@@ -1,4 +1,4 @@
-{
+export const translationRU = {
   "balanceAdd1": "Купить тревел-кредиты",
   "balanceAdd2": "Вы заплатите {{priceString}}",
   "balanceAdd3": "Вы получите <1>{{priceStr}}</1> тревел-кредитов",

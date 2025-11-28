@@ -1,4 +1,4 @@
-{
+export const translationID = {
   "balanceAdd1": "Beli kredit perjalanan",
   "balanceAdd2": "Anda akan membayar {{priceString}}",
   "balanceAdd3": "Anda akan menerima <1>{{priceStr}}</1> kredit perjalanan",

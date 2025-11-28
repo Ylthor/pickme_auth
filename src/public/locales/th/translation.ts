@@ -1,4 +1,4 @@
-{
+export const translationTH = {
   "balanceAdd1": "ซื้อเครดิตท่องเที่ยว",
   "balanceAdd2": "คุณจะจ่าย {{priceString}}",
   "balanceAdd3": "คุณจะได้รับ <1>{{priceStr}}</1> เครดิตท่องเที่ยว",
