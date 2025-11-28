@@ -1,7 +1,9 @@
 const postcss = require('rollup-plugin-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const tailwindcss = require('tailwindcss');
+const tailwindcss = require('@tailwindcss/postcss');
+const { heroui } = require("@heroui/theme");
+const colors = require('tailwindcss/colors');
 
 module.exports = {
     rollup(config, options) {
@@ -10,14 +12,16 @@ module.exports = {
                 plugins: [
                     tailwindcss({
                         purge: ['./src/**/*.tsx'],
-                        darkMode: false, // or 'media' or 'class'
                         theme: {
                             extend: {},
                         },
                         variants: {
                             extend: {},
                         },
-                        plugins: [],
+                        darkMode: true,
+                        plugins: [
+                            heroui(),
+                        ]
                     }),
                     autoprefixer(),
                 ],

@@ -3,8 +3,6 @@ import AuthFormInners from "./components/auth/AuthFormInners";
 import "./styles/globals.css";
 export function AuthForm() {
     return (
-        <div>
-            <AuthFormInners/>
-        </div>
+        <AuthFormInners/>
     );
 }
