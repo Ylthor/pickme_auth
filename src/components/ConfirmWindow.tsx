@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
 import { v4 as uuidv4 } from 'uuid';
-import {useOtpConfirmStore} from "../providers/otp-confirm-store-provider";
+import {useOtpConfirmStore} from "../otp-confirm-store-provider";
 import ApiService from "../service/ApiService";
 import {setNewInterval} from "../functions/intervalFunc";
 import {getCallbackFuncsByKey} from "../functions/utils";

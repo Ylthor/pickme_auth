@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@heroui/dropdown"
 import toast from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
-import {useSiteAttributeStore} from "../../providers/site-attribute-store-provider";
+import {useSiteAttributeStore} from "../../site-attribute-store-provider";
 import ApiService from "../../service/ApiService";
 import {menuItemClassName} from "./ThemeSelector";
 

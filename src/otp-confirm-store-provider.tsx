@@ -1,5 +1,5 @@
 import React, { ReactNode, createContext, useRef, useContext } from "react";
-import {createOtpConfirmStore, OtpConfirmStore} from "../stores/otp-confirm-store";
+import {createOtpConfirmStore, OtpConfirmStore} from "./stores/otp-confirm-store";
 // @ts-ignore
 import {useStore} from "zustand";
 

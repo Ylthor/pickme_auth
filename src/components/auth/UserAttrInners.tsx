@@ -1,6 +1,6 @@
 import React from 'react';
-import {useAuthStore} from "../../providers/auth-store-provider";
-import {useSiteAttributeStore} from "../../providers/site-attribute-store-provider";
+import {useAuth} from "../../auth-store-provider";
+import {useSiteAttributeStore} from "../../site-attribute-store-provider";
 import {useTranslation} from "react-i18next";
 import EditIcon from "../icons/EditIcon";
 import ThemeSelector from "../ui/ThemeSelector";
@@ -12,7 +12,7 @@ import SiteButton from "../ui/SiteButton";
 import "../../styles/globals.css"
 function UserAttrInners() {
     const { email,name, number_phone,surname, logOut} =
-        useAuthStore((state) => state);
+        useAuth((state) => state);
     const {setUserAttrsModalState} = useSiteAttributeStore((store) => store);
     const {t} = useTranslation();
     const onClick = () => {

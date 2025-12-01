@@ -9,7 +9,7 @@ import QRCodeStyling, {
     Options,
     TypeNumber
 } from 'qr-code-styling'
-import {useSiteAttributeStore} from "../../providers/site-attribute-store-provider";
+import {useSiteAttributeStore} from "../../site-attribute-store-provider";
 import {twMerge} from "tailwind-merge";
 
 interface QRCodeProps {

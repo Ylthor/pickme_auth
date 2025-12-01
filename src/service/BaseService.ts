@@ -3,9 +3,9 @@ import { useDeviceSelectors } from "react-device-detect";
 
 import toast from 'react-hot-toast'
 import i18n from 'i18next'
-import {authStoreTest} from "../providers/auth-store-provider";
+import {authStoreTest} from "../auth-store-provider";
 import {REQUEST_HEADER_AUTH_KEY, TOKEN_TYPE} from "./ApiService";
-import {otpConfirmStoreTest} from "../providers/otp-confirm-store-provider";
+import {otpConfirmStoreTest} from "../otp-confirm-store-provider";
 
 const unauthorizedCode = [401];
 

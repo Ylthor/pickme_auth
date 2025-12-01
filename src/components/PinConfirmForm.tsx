@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import {useTranslation} from "react-i18next";
-import {useAuthStore} from "../providers/auth-store-provider";
+import {useAuth} from "../auth-store-provider";
 import PickMeIcon from "./icons/PickMeIcon";
 import PinKeyboard from "./PinKeyboard";
 
@@ -12,7 +12,7 @@ function PinConfirmForm({onConfirm}: PinConfirmFormProps) {
     const {t} = useTranslation()
     const [isError, setIsError] = useState(false)
     const { pin } =
-        useAuthStore((state) => state);
+        useAuth((state) => state);
     const onFill = useCallback((val:string) => {
         if (pin !== val) {
             setIsError(true)

@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {useAuthStore} from "../../providers/auth-store-provider";
-import {useOtpConfirmStore} from "../../providers/otp-confirm-store-provider";
+import {useAuth} from "../../auth-store-provider";
+import {useOtpConfirmStore} from "../../otp-confirm-store-provider";
 import {useTranslation} from "react-i18next";
 import {Formik, FormikProps} from "formik";
 import toast from "react-hot-toast";
@@ -15,7 +15,7 @@ function AuthFormInners() {
         email: emailFromStore,
         setUserInfo,
         setAuthToken,
-    } = useAuthStore((state) => state);
+    } = useAuth((state) => state);
     const {
         setOpen,
     } = useOtpConfirmStore((state) => state);

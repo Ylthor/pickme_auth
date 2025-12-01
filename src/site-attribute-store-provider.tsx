@@ -1,7 +1,7 @@
 import React, { ReactNode, createContext, useRef, useContext } from "react";
 // @ts-ignore
 import { useStore } from "zustand";
-import {createSiteAttributeStore, SiteAttributeStore} from "../stores/site-attribute-store";
+import {createSiteAttributeStore, SiteAttributeStore} from "./stores/site-attribute-store";
 
 export type SiteAttributeStoreApi = ReturnType<typeof createSiteAttributeStore>;
 

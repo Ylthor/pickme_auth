@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@heroui/dropdown"
-import {useSiteAttributeStore} from "../../providers/site-attribute-store-provider";
+import {useSiteAttributeStore} from "../../site-attribute-store-provider";
 
 export const setTheme = (selectedTheme:string | null | undefined) => {
     localStorage.setItem('theme',selectedTheme ?? 'system');

@@ -1,7 +1,7 @@
 import React, { ReactNode, createContext, useRef, useContext } from "react";
 // @ts-ignore
 import { useStore } from "zustand";
-import {AuthStore, createAuthStore} from "../stores/auth-store";
+import {AuthStore, createAuthStore} from "./stores/auth-store";
 
 export type AuthStoreApi = ReturnType<typeof createAuthStore>;
 
@@ -29,7 +29,7 @@ export const AuthStoreProvider = ({ children }: AuthStoreProviderProps) => {
     );
 };
 
-export const useAuthStore = <T,>(selector: (store: AuthStore) => T): T => {
+export const useAuth = <T,>(selector: (store: AuthStore) => T): T => {
     const authStoreContext = useContext(AuthStoreContext);
 
     if (!authStoreContext) {

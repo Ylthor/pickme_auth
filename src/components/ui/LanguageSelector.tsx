@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@heroui/dropdown"
-import {useSiteAttributeStore} from "../../providers/site-attribute-store-provider";
+import {useSiteAttributeStore} from "../../site-attribute-store-provider";
 export const AllowedLanguages = ['en','ru','th','id']
 import {menuItemClassName} from "./ThemeSelector";
 import {Languages} from "../../assets/languages";

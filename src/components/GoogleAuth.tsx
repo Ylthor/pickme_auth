@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 import { Options } from 'qr-code-styling'
 import {Formik, FormikProps} from "formik";
 import QrCodeComponent, {DEFAULT_QR_OPTIONS} from "./ui/QrCode";
-import {useAuthStore} from "../providers/auth-store-provider";
+import {useAuth} from "../auth-store-provider";
 import ApiService from "../service/ApiService";
 import SiteButton from "./ui/SiteButton";
 import ComponentWrapper from "./ui/ComponentWrapper";
@@ -28,7 +28,7 @@ function GoogleAuth() {
     const {onClose} = useDisclosure();
     const [windowOpen, setWindowOpen] = useState<boolean>(false);
     const { email } =
-        useAuthStore((state) => state);
+        useAuth((state) => state);
 
     const getAllowedVerifyMethods = () => {
         setIsLoading(true);

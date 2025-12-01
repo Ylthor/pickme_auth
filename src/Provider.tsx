@@ -1,13 +1,11 @@
 import React from "react";
 import { Toaster } from 'react-hot-toast'
-import {AuthStoreProvider} from "./providers/auth-store-provider";
-import {SiteAttributeStoreProvider} from "./providers/site-attribute-store-provider";
-import {OtpConfirmStoreProvider} from "./providers/otp-confirm-store-provider";
-import {HeroUIProvider} from "@heroui/system";
+import {AuthStoreProvider} from "./auth-store-provider";
+import {SiteAttributeStoreProvider} from "./site-attribute-store-provider";
+import {OtpConfirmStoreProvider} from "./otp-confirm-store-provider";
 
 export function Provider({ children }: { children: React.ReactNode }) {
   return (
-    <HeroUIProvider>
       <AuthStoreProvider>
           <SiteAttributeStoreProvider>
               <OtpConfirmStoreProvider>
@@ -16,6 +14,5 @@ export function Provider({ children }: { children: React.ReactNode }) {
               </OtpConfirmStoreProvider>
           </SiteAttributeStoreProvider>
       </AuthStoreProvider>
-    </HeroUIProvider>
   );
 }

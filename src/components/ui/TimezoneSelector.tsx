@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {useSiteAttributeStore} from "../../providers/site-attribute-store-provider";
+import {useSiteAttributeStore} from "../../site-attribute-store-provider";
 import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@heroui/dropdown";
 import {menuItemClassName} from "./ThemeSelector";
 
